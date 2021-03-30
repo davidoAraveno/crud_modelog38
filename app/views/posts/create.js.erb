@@ -1,0 +1,13 @@
+var table = document.getElementById('table');
+var tr = document.createElement('tr');
+var td_title = document.createElement('td');
+var td_content = document.createElement('td');
+
+
+td_title.innerHTML = '<%= @post.title %>';
+td_content.innerHTML = '<%= @post.content %>';
+
+tr.appendChild(td_title);
+tr.appendChild(td_content);
+
+table.appendChild(tr);

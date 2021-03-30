@@ -1,0 +1,12 @@
+var show_post = document.querySelector('#show_post');
+var h2 = document.createElement('h2');
+var p = document.createElement('p');
+
+show_post.innerHTML = '';
+
+h2.innerHTML ='<%= @post.title %>'
+p.innerHTML ='<%= @post.content %>'
+
+show_post.appendChild(h2);
+show_post.appendChild(p);
+
