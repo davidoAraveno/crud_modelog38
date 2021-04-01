@@ -1,0 +1,11 @@
+$('#post_<%= @post.id %>').empty();
+$('#post_<%= @post.id %>').html(`
+    <td><%= @post.title %></td>
+        <td><%= @post.content %></td>
+        <td><%= link_to 'Show', @post, remote: true %></td>
+        <td><%= link_to 'Edit', edit_post_path(@post.id), remote: true %></td>
+        <td><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+`)
+
+$('#modal_edit').empty();
+$('.modal-backdrop').remove();

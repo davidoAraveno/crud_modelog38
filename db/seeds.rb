@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Post.destroy_all
+
+10.times do |i|
+    Post.create([
+            {
+            title: Faker::Name.name,
+            content: Faker::Name.name
+            }
+        ]
+
+    )
+end

@@ -3,8 +3,14 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
     @post = Post.new
+    
+    if(params[:q])
+      @posts = Post.where("title LIKE ? OR content LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
+    else
+      @posts = Post.all
+    end
+    
     respond_to do |format|
       format.html { }
       format.js { }
